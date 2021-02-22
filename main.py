@@ -5,6 +5,7 @@
     todo:
         try model.predict
         figure out the passing in of callbacks
+        figure out how to store the network vars somewhere so can just load
         try other datasets
         revise all the terminology and understand what's going on
 """
@@ -83,9 +84,9 @@ print("model output shape: " + str(model.output_shape) + "\n")
 
 # compile model
 model.compile(
-        loss="categorical_crossentropy",
-        optimizer="adam",
-        metrics=["accuracy"])
+        loss="categorical_crossentropy",    # how "wrong" your output is
+        optimizer="adam",                   # how to correct the output
+        metrics=["accuracy"])               # judge performance of model
 
 # fit model to data
 # epochs: number of iterations thru dataset
